@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckwo3rwtd8cxr"]
+
+[ext_resource type="Script" path="res://ice.gd" id="1_uq68r"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ppk7f"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_o83op"]
+as_normal_map = true
+noise = SubResource("FastNoiseLite_ppk7f")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6007d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32ugw"]
+roughness_texture = SubResource("NoiseTexture2D_6007d")
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_o83op")
+
+[sub_resource type="BoxMesh" id="BoxMesh_8jlfd"]
+material = SubResource("StandardMaterial3D_32ugw")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6hbxp"]
+
+[node name="Ice" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_8jlfd")
+script = ExtResource("1_uq68r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_6hbxp")

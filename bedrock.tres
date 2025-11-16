@@ -1,0 +1,31 @@
+[gd_resource type="BoxMesh" load_steps=6 format=3 uid="uid://cmdkls56o6jw4"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wm477"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jwi8a"]
+as_normal_map = true
+noise = SubResource("FastNoiseLite_wm477")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2abpl"]
+as_normal_map = true
+noise = SubResource("FastNoiseLite_wm477")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8dyti"]
+as_normal_map = true
+noise = SubResource("FastNoiseLite_wm477")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3cg6j"]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(0.201267, 0.192199, 0.190018, 1)
+roughness_texture = SubResource("NoiseTexture2D_8dyti")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_jwi8a")
+refraction_enabled = true
+refraction_texture = SubResource("NoiseTexture2D_2abpl")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[resource]
+material = SubResource("StandardMaterial3D_3cg6j")

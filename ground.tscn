@@ -1,0 +1,133 @@
+[gd_scene load_steps=19 format=3 uid="uid://b5p6t6vaaxk66"]
+
+[ext_resource type="Texture2D" uid="uid://cpo3r0e8w63pn" path="res://textures/grass.webp" id="1_p6uan"]
+[ext_resource type="BoxMesh" uid="uid://j4ghk4xxuvhb" path="res://Water.tres" id="2_uv266"]
+[ext_resource type="AudioStream" uid="uid://dkc11a5niurrc" path="res://audios/sea_audio.tres" id="3_hycm0"]
+[ext_resource type="Texture2D" uid="uid://bvvgd0l13nfll" path="res://textures/grassbushcc008.png" id="4_7tlct"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sgc4l"]
+seamless_blend_skirt = 0.067
+as_normal_map = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clvg8"]
+albedo_texture = ExtResource("1_p6uan")
+emission = Color(0, 0.334051, 0, 1)
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_sgc4l")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_37txt"]
+material = SubResource("StandardMaterial3D_clvg8")
+size = Vector2(50, 50)
+center_offset = Vector3(25, 0, 25)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fo4if"]
+data = PackedVector3Array(50, 0, 50, 0, 0, 50, 50, 0, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_82amn"]
+plane = Plane(0, 1, -1, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_uhbsw"]
+plane = Plane(0, 0, 1, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_dsesv"]
+plane = Plane(1, 0, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_22n6a"]
+plane = Plane(-1, 1, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_seddl"]
+transparency = 1
+albedo_color = Color(0.711398, 1, 0.701778, 1)
+albedo_texture = ExtResource("4_7tlct")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_n4lph"]
+material = SubResource("StandardMaterial3D_seddl")
+center_offset = Vector3(0, 1, 0)
+
+[sub_resource type="MultiMesh" id="MultiMesh_8gwbw"]
+transform_format = 1
+instance_count = 50
+mesh = SubResource("QuadMesh_n4lph")
+buffer = PackedFloat32Array(0, 0, -1.001, 25.7758, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 37.781, -1.001, 0, 0, 14.7124, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 33.4694, 0, 0, -1.001, 25.8402, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 41.7481, -1.001, 0, 0, 17.3816, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 17.2224, 0, 0, -1.001, 44.1188, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 23.4146, 0, 0, -1.001, 10.3182, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 40.3731, -1.001, 0, 0, 20.0345, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 4.38442, -1.001, 0, 0, 25.9328, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 16.2451, 0, 0, -1.001, 47.3668, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 39.03, 0, 0, -1.001, 13.8143, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 44.9475, -1.001, 0, 0, 11.9735, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 13.6077, 0, 0, -1.001, 11.4922, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 46.231, -1.001, 0, 0, 33.1347, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 7.21955, -1.001, 0, 0, 6.00102, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 2.06251, -1.001, 0, 0, 16.5972, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 5.3161, -1.001, 0, 0, 36.6488, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 1.46294, -1.001, 0, 0, 37.212, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 11.46, -1.001, 0, 0, 11.1003, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 18.8093, 0, 0, -1.001, 23.9376, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 49.7285, 0, 0, -1.001, 43.4167, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 27.7587, -1.001, 0, 0, 35.9728, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 5.38598, 0, 0, -1.001, 44.5572, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 18.09, 0, 0, -1.001, 38.8472, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 41.705, -1.001, 0, 0, 18.5646, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 31.4133, 0, 0, -1.001, 18.4706, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 36.1938, 0, 0, -1.001, 35.4564, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 43.0721, 0, 0, -1.001, 30.0024, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 21.676, 0, 0, -1.001, 22.1827, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 34.0198, 0, 0, -1.001, 36.5635, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 17.7277, -1.001, 0, 0, 10.1433, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 29.8732, 0, 0, -1.001, 49.6176, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 44.4624, 0, 0, -1.001, 41.9421, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 19.6425, 0, 0, -1.001, 38.7509, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 33.5559, -1.001, 0, 0, 0.766, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 23.4091, 0, 0, -1.001, 49.1576, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 29.3233, 0, 0, -1.001, 49.5205, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 3.68964, -1.001, 0, 0, 9.23535, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 39.6515, -1.001, 0, 0, 36.2482, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 13.1338, 0, 0, -1.001, 19.486, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 47.158, -1.001, 0, 0, 17.803, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 16.101, 0, 0, -1.001, 35.8363, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 38.5444, 0, 0, -1.001, 20.4357, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 37.3313, 0, 0, -1.001, 46.2985, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 25.0556, -1.001, 0, 0, 2.3658, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 35.4004, 0, 0, -1.001, 35.8316, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 26.2159, 0, 0, -1.001, 17.8443, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 48.0159, -1.001, 0, 0, 25.8442, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 21.2043, 0, 0, -1.001, 33.9473, 0, 1.001, 0, -0.900974, 1.001, 0, 0, 40.6746, -1.001, 0, 0, 29.1493, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 9.38046, -1.001, 0, 0, 17.1253, 0, 1.001, 0, -0.900974, 0, 0, -1.001, 0.608626)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u416f"]
+albedo_color = Color(0.336608, 0.336608, 0.336608, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fcu3g"]
+
+[sub_resource type="Skin" id="Skin_4ola3"]
+bind_count = 4
+bind/0/name = &""
+bind/0/bone = -1
+bind/0/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/1/name = &""
+bind/1/bone = -1
+bind/1/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/2/name = &""
+bind/2/bone = -1
+bind/2/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/3/name = &""
+bind/3/bone = -1
+bind/3/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Ground" type="Node3D"]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_37txt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_fo4if")
+
+[node name="FrontEdge" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 48)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FrontEdge"]
+transform = Transform3D(1, 0, 0, 0, 0.958362, 0.285555, 0, -0.285555, 0.958362, 0, -3.13267, 0)
+shape = SubResource("WorldBoundaryShape3D_82amn")
+
+[node name="BackEdge" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackEdge"]
+shape = SubResource("WorldBoundaryShape3D_uhbsw")
+
+[node name="LeftEdge" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftEdge"]
+shape = SubResource("WorldBoundaryShape3D_dsesv")
+
+[node name="RightEdge" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.19497, -0.980809, 0, 0.980809, -0.19497, 0, 0, 0, 1, 50, 0, 25)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightEdge"]
+shape = SubResource("WorldBoundaryShape3D_22n6a")
+
+[node name="Sea" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+mesh = ExtResource("2_uv266")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sea"]
+stream = ExtResource("3_hycm0")
+volume_db = 11.667
+autoplay = true
+
+[node name="GrassMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.399606, -0.455773, 1.39374)
+mesh = SubResource("QuadMesh_n4lph")
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="GrassMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.924414, 0)
+multimesh = SubResource("MultiMesh_8gwbw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.52513, 0.683827, 0)
+material_override = SubResource("StandardMaterial3D_u416f")
+mesh = SubResource("ArrayMesh_fcu3g")
+skin = SubResource("Skin_4ola3")
+skeleton = NodePath("")

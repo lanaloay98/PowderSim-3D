@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://cl54iju81bltv"]
+
+[ext_resource type="Script" path="res://sand_box.gd" id="1_5e08d"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1rqwc"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_io4y2"]
+as_normal_map = true
+noise = SubResource("FastNoiseLite_1rqwc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px525"]
+albedo_color = Color(0.921569, 0.803922, 0.352941, 1)
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_io4y2")
+
+[sub_resource type="SphereMesh" id="SphereMesh_hg12b"]
+material = SubResource("StandardMaterial3D_px525")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nicoo"]
+
+[node name="SandBox" type="MeshInstance3D" groups=["deletable"]]
+mesh = SubResource("SphereMesh_hg12b")
+script = ExtResource("1_5e08d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_nicoo")

@@ -1,0 +1,211 @@
+[gd_scene load_steps=20 format=3 uid="uid://dund2330ck51b"]
+
+[ext_resource type="PackedScene" uid="uid://b5p6t6vaaxk66" path="res://ground.tscn" id="1_dic2f"]
+[ext_resource type="Texture2D" uid="uid://df3f1y7q3284c" path="res://textures/walls.png" id="2_3nxx3"]
+[ext_resource type="PackedScene" uid="uid://sjmoyoqmrlva" path="res://player.tscn" id="2_42npo"]
+[ext_resource type="Texture2D" uid="uid://cyp26td04hejg" path="res://textures/bedrock.png" id="2_x6ukj"]
+[ext_resource type="Texture2D" uid="uid://dswl4chdjgtqc" path="res://textures/sand.png" id="3_8fr1y"]
+[ext_resource type="PackedScene" uid="uid://57b7gv388n5j" path="res://ElementSim.tscn" id="3_qsb64"]
+[ext_resource type="Texture2D" uid="uid://dbsuaxg2brvnt" path="res://textures/glass.png" id="4_5xytp"]
+[ext_resource type="Texture2D" uid="uid://b2cmmoo5exbs8" path="res://textures/powdr.png" id="4_018oy"]
+[ext_resource type="Texture2D" uid="uid://du732eyqv1ju0" path="res://textures/water.png" id="4_s40n7"]
+[ext_resource type="Texture2D" uid="uid://bi0ffr44xrdjx" path="res://textures/liquids.png" id="5_5skro"]
+[ext_resource type="Texture2D" uid="uid://dxeww14fvnkpo" path="res://textures/solids.png" id="8_m58ru"]
+[ext_resource type="Texture2D" uid="uid://djc7k65kmjrqt" path="res://textures/wood.png" id="9_13p3o"]
+[ext_resource type="Texture2D" uid="uid://bu4k0f5r1oow" path="res://textures/oil.png" id="9_ymtt0"]
+[ext_resource type="Texture2D" uid="uid://d0nxyyusodjoi" path="res://textures/FIR.png" id="12_mqces"]
+[ext_resource type="Texture2D" uid="uid://dyyjaqmd5f46m" path="res://textures/explosive.png" id="12_vbmqp"]
+[ext_resource type="Texture2D" uid="uid://b7x0vo5stkpif" path="res://textures/ice.png" id="13_35mg4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fio30"]
+sky_top_color = Color(0.611371, 0.802078, 0.980062, 1)
+sky_horizon_color = Color(0.702843, 0.742769, 0.778265, 1)
+ground_horizon_color = Color(0.702843, 0.742769, 0.778265, 1)
+
+[sub_resource type="Sky" id="Sky_7xarr"]
+sky_material = SubResource("ProceduralSkyMaterial_fio30")
+
+[sub_resource type="Environment" id="Environment_xxjm1"]
+background_mode = 2
+sky = SubResource("Sky_7xarr")
+tonemap_mode = 2
+ssao_enabled = true
+
+[node name="Game" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("2_42npo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1.63928, 45.309)
+
+[node name="WallsLayer" type="CanvasLayer" parent="Player"]
+
+[node name="WallsToggleElementBar" type="Button" parent="Player/WallsLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -49.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = 47.0
+grow_horizontal = 2
+tooltip_text = "Walls"
+icon = ExtResource("2_3nxx3")
+
+[node name="WallsBar" type="HBoxContainer" parent="Player/WallsLayer"]
+offset_left = 974.0
+offset_top = 1.0
+offset_right = 1101.0
+offset_bottom = 41.0
+
+[node name="Bedrock" type="TextureButton" parent="Player/WallsLayer/WallsBar"]
+layout_mode = 2
+tooltip_text = "Bedrock, blocks everything"
+texture_normal = ExtResource("2_x6ukj")
+
+[node name="Glass" type="TextureButton" parent="Player/WallsLayer/WallsBar"]
+layout_mode = 2
+tooltip_text = "Glass"
+texture_normal = ExtResource("4_5xytp")
+
+[node name="powderlayer" type="CanvasLayer" parent="Player"]
+
+[node name="PowderToggle" type="Button" parent="Player/powderlayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.076
+anchor_right = 1.0
+anchor_bottom = 0.076
+offset_left = -51.0
+offset_top = -0.248005
+offset_right = 1.0
+offset_bottom = 47.752
+grow_horizontal = 0
+tooltip_text = "Powders"
+text = "
+"
+icon = ExtResource("4_018oy")
+
+[node name="PowderContainer" type="HBoxContainer" parent="Player/powderlayer"]
+offset_left = 975.0
+offset_top = 49.0
+offset_right = 1098.0
+offset_bottom = 89.0
+
+[node name="SandButton" type="TextureButton" parent="Player/powderlayer/PowderContainer"]
+layout_mode = 2
+tooltip_text = "Sand, heavy particles, turns to glass at 800C"
+texture_normal = ExtResource("3_8fr1y")
+
+[node name="LiquidsLayer" type="CanvasLayer" parent="Player"]
+
+[node name="liquidsToggle" type="Button" parent="Player/LiquidsLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.165
+anchor_right = 1.0
+anchor_bottom = 0.165
+offset_left = -48.0
+offset_top = -6.92001
+offset_bottom = 41.08
+grow_horizontal = 2
+tooltip_text = "Liquids"
+icon = ExtResource("5_5skro")
+
+[node name="LiquidsContainer" type="HBoxContainer" parent="Player/LiquidsLayer"]
+offset_left = 975.0
+offset_top = 100.0
+offset_right = 1106.0
+offset_bottom = 140.0
+
+[node name="WaterButton" type="TextureButton" parent="Player/LiquidsLayer/LiquidsContainer"]
+layout_mode = 2
+tooltip_text = "Water, Extinguishes fire, turns to ice when cold"
+texture_normal = ExtResource("4_s40n7")
+
+[node name="OilButton" type="TextureButton" parent="Player/LiquidsLayer/LiquidsContainer"]
+layout_mode = 2
+tooltip_text = "Oill, Flammable, Flouats over water"
+texture_normal = ExtResource("9_ymtt0")
+
+[node name="SolidsLayer" type="CanvasLayer" parent="Player"]
+
+[node name="solidsToggle" type="Button" parent="Player/SolidsLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.256
+anchor_right = 1.0
+anchor_bottom = 0.256
+offset_left = -48.0
+offset_top = -13.888
+offset_right = 2.0
+offset_bottom = 34.112
+tooltip_text = "Solids"
+icon = ExtResource("8_m58ru")
+
+[node name="SolidsContainer" type="HBoxContainer" parent="Player/SolidsLayer"]
+offset_left = 976.0
+offset_top = 153.0
+offset_right = 1101.0
+offset_bottom = 196.0
+
+[node name="WoodButton" type="TextureButton" parent="Player/SolidsLayer/SolidsContainer"]
+layout_mode = 2
+tooltip_text = "Wood, Flammable"
+texture_normal = ExtResource("9_13p3o")
+
+[node name="IceButton" type="TextureButton" parent="Player/SolidsLayer/SolidsContainer" groups=["deletable"]]
+layout_mode = 2
+tooltip_text = "Ice, 0C, turns to water when heated to 10C+"
+texture_normal = ExtResource("13_35mg4")
+
+[node name="ExplosivesLayer" type="CanvasLayer" parent="Player"]
+
+[node name="explosivesToggle" type="Button" parent="Player/ExplosivesLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.326
+anchor_right = 1.0
+anchor_bottom = 0.326
+offset_left = -49.0
+offset_top = 3.752
+offset_right = -1.0
+offset_bottom = 51.752
+tooltip_text = "Explosives"
+icon = ExtResource("12_vbmqp")
+
+[node name="ExplosivesContainer" type="HBoxContainer" parent="Player/ExplosivesLayer"]
+offset_left = 976.0
+offset_top = 213.0
+offset_right = 1016.0
+offset_bottom = 253.0
+
+[node name="FireButton" type="TextureButton" parent="Player/ExplosivesLayer/ExplosivesContainer"]
+layout_mode = 2
+tooltip_text = "Fire, Ignites flammable materials, Heats air, 600C"
+texture_normal = ExtResource("12_mqces")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_color = Color(1, 0.894118, 0.517647, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xxjm1")
+
+[node name="ElementSim" parent="." instance=ExtResource("3_qsb64")]
+
+[node name="Ground" parent="." instance=ExtResource("1_dic2f")]
+
+[connection signal="pressed" from="Player/WallsLayer/WallsToggleElementBar" to="Player" method="_on_walls_toggle_element_bar_pressed"]
+[connection signal="pressed" from="Player/WallsLayer/WallsBar/Bedrock" to="Player" method="_on_bedrock_pressed"]
+[connection signal="pressed" from="Player/WallsLayer/WallsBar/Bedrock" to="Player" method="_on_bedrock_button_pressed"]
+[connection signal="pressed" from="Player/WallsLayer/WallsBar/Glass" to="Player" method="_on_glass_pressed"]
+[connection signal="pressed" from="Player/powderlayer/PowderToggle" to="Player" method="_on_powder_toggle_pressed"]
+[connection signal="pressed" from="Player/powderlayer/PowderContainer/SandButton" to="Player" method="_on_sand_button_pressed"]
+[connection signal="pressed" from="Player/LiquidsLayer/liquidsToggle" to="Player" method="_on_liquids_toggle_pressed"]
+[connection signal="pressed" from="Player/LiquidsLayer/LiquidsContainer/WaterButton" to="Player" method="_on_water_button_pressed"]
+[connection signal="pressed" from="Player/LiquidsLayer/LiquidsContainer/OilButton" to="Player" method="_on_oil_button_pressed"]
+[connection signal="pressed" from="Player/SolidsLayer/solidsToggle" to="Player" method="_on_solids_pressed"]
+[connection signal="pressed" from="Player/SolidsLayer/SolidsContainer/WoodButton" to="Player" method="_on_wood_button_pressed"]
+[connection signal="pressed" from="Player/SolidsLayer/SolidsContainer/IceButton" to="Player" method="_on_ice_button_pressed"]
+[connection signal="pressed" from="Player/ExplosivesLayer/explosivesToggle" to="Player" method="_on_explosives_toggle_pressed"]
+[connection signal="pressed" from="Player/ExplosivesLayer/ExplosivesContainer/FireButton" to="Player" method="_on_fire_button_pressed"]

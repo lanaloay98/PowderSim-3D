@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpbe0ic5x5dtu"]
+
+[ext_resource type="Script" path="res://wood.gd" id="1_l2aoh"]
+[ext_resource type="TubeTrailMesh" uid="uid://bdc6rt4ptlkpw" path="res://Wood.tres" id="1_t3a7d"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3uqpm"]
+rough = true
+bounce = 0.2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3l4gx"]
+height = 0.979133
+
+[node name="wood" type="RigidBody3D" groups=["deletable", "flammable"]]
+physics_material_override = SubResource("PhysicsMaterial_3uqpm")
+script = ExtResource("1_l2aoh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_t3a7d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_3l4gx")

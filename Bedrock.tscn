@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ksv4a07q3xq"]
+
+[ext_resource type="BoxMesh" uid="uid://cmdkls56o6jw4" path="res://bedrock.tres" id="1_17hpc"]
+[ext_resource type="Script" path="res://bedrock.gd" id="2_dufdd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_67q08"]
+
+[node name="Bedrock" type="MeshInstance3D" groups=["deletable"]]
+mesh = ExtResource("1_17hpc")
+script = ExtResource("2_dufdd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_67q08")

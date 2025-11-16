@@ -1,0 +1,16 @@
+[gd_resource type="TubeTrailMesh" load_steps=4 format=3 uid="uid://bdc6rt4ptlkpw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fxhho"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rpbib"]
+as_normal_map = true
+noise = SubResource("FastNoiseLite_fxhho")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b77jc"]
+albedo_color = Color(0.516003, 0.322413, 0.167424, 1)
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_rpbib")
+uv1_world_triplanar = true
+
+[resource]
+material = SubResource("StandardMaterial3D_b77jc")

@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://dl607keagfwbc"]
+
+[ext_resource type="Script" path="res://glass.gd" id="2_wve5h"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k4wgv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hfw20"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_k4wgv")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wxebd"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_k4wgv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ievxr"]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(0.803922, 1, 1, 0.168627)
+roughness = 0.0
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_hfw20")
+refraction_texture = SubResource("NoiseTexture2D_wxebd")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_afxbd"]
+material = SubResource("StandardMaterial3D_ievxr")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q7df8"]
+
+[node name="Glass" type="MeshInstance3D" groups=["deletable"]]
+mesh = SubResource("BoxMesh_afxbd")
+script = ExtResource("2_wve5h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_q7df8")

@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://bnrqbt3ai8uso"]
+
+[ext_resource type="Texture2D" uid="uid://duwnx2ugqkdsl" path="res://textures/Smoke30Frames_0.png" id="1_gt2w2"]
+
+[sub_resource type="Gradient" id="Gradient_enygn"]
+offsets = PackedFloat32Array(0.0357143, 0.517857, 0.982143)
+colors = PackedColorArray(1, 1, 1, 1, 5.19812e-06, 0.641173, 0.836906, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gqdks"]
+gradient = SubResource("Gradient_enygn")
+
+[sub_resource type="Curve" id="Curve_riwwq"]
+_data = [Vector2(0, 0.043956), 0.0, 0.0, 0, 0, Vector2(0.186047, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.076923), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_l4qvi"]
+curve = SubResource("Curve_riwwq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1nhoc"]
+emission_shape = 1
+emission_sphere_radius = 0.4
+angle_min = 360.0
+angle_max = 361.0
+direction = Vector3(0, 1, 0)
+spread = 0.1
+initial_velocity_min = 5.0
+initial_velocity_max = 5.1
+angular_velocity_min = 40.0
+angular_velocity_max = 41.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 4.0
+linear_accel_max = 5.0
+radial_accel_min = -100.0
+radial_accel_max = -2.23517e-06
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = -2.23517e-06
+scale_max = 1000.0
+scale_curve = SubResource("CurveTexture_l4qvi")
+scale_over_velocity_max = 983.33
+color_ramp = SubResource("GradientTexture1D_gqdks")
+hue_variation_min = -0.01
+hue_variation_max = -2.23517e-08
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+anim_offset_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkcca"]
+blend_mode = 1
+depth_draw_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.984314, 1, 1, 1)
+albedo_texture = ExtResource("1_gt2w2")
+refraction_scale = 0.0
+billboard_mode = 3
+particles_anim_h_frames = 6
+particles_anim_v_frames = 5
+particles_anim_loop = true
+grow_amount = 16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_uyfd6"]
+material = SubResource("StandardMaterial3D_pkcca")
+size = Vector2(0.5, 0.5)
+
+[node name="Steam" type="GPUParticles3D"]
+amount = 200
+lifetime = 2.14
+preprocess = 0.03
+speed_scale = 3.14
+explosiveness = 0.05
+randomness = 1.0
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_1nhoc")
+draw_pass_1 = SubResource("QuadMesh_uyfd6")

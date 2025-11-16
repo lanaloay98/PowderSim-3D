@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://co2dnkmyp5mxl"]
+
+[ext_resource type="BoxMesh" uid="uid://jk1fmdjr87a5" path="res://Oil.tres" id="1_vm7s6"]
+[ext_resource type="Script" path="res://oil.gd" id="2_yeffj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oa7qg"]
+
+[node name="oil" type="MeshInstance3D" groups=["deletable", "flammable"]]
+mesh = ExtResource("1_vm7s6")
+script = ExtResource("2_yeffj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_oa7qg")

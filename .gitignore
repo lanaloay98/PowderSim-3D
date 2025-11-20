@@ -1,3 +1,28 @@
 # Godot 4+ specific ignores
+
+# Godot import files (auto-generated)
+.import/
+
+# Godot editor cache
 .godot/
+
+# Export folders (generated builds)
+export/
+exports/
+
+# Temporary files
+*.tmp
+
+# Mono (C#) specific
+.mono/
+*.csproj
+*.sln
+
+# Android build folder
 /android/
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db

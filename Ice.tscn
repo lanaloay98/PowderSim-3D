@@ -20,7 +20,7 @@ material = SubResource("StandardMaterial3D_32ugw")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6hbxp"]
 
-[node name="Ice" type="MeshInstance3D"]
+[node name="Ice" type="MeshInstance3D" groups=["deletable"]]
 mesh = SubResource("BoxMesh_8jlfd")
 script = ExtResource("1_uq68r")
 

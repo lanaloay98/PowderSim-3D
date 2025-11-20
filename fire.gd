@@ -1,8 +1,8 @@
-extends Button
+extends GPUParticles3D
 
 
 func _ready() -> void:
-	pass 
+	add_to_group("deletable")
 
 func _process(delta: float) -> void:
 	pass

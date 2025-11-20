@@ -1,18 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://ck334e61427gp"]
+[gd_scene load_steps=11 format=3 uid="uid://ddh755tptq0pc"]
 
-[ext_resource type="Texture2D" uid="uid://bxuoo85yytlrb" path="res://textures/fire.png" id="1_vytmp"]
+[ext_resource type="Texture2D" uid="uid://bxuoo85yytlrb" path="res://textures/fire.png" id="1_8q5dh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_te6wf"]
-transparency = 1
 blend_mode = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 0.113725)
-albedo_texture = ExtResource("1_vytmp")
+albedo_texture = ExtResource("1_8q5dh")
 billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_enygn"]
+offsets = PackedFloat32Array(0, 0.214286, 0.5, 0.75, 0.949153)
+colors = PackedColorArray(0.0648107, 0.000415808, 0.0017212, 1, 0.764719, 0.0441817, 0.120853, 1, 0.984314, 0.937255, 0.690196, 1, 1, 0.305882, 0.172549, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r0m4r"]
+gradient = SubResource("Gradient_enygn")
 
 [sub_resource type="Curve" id="Curve_uh2kc"]
 _data = [Vector2(0, 0.252747), 0.0, 0.0, 0, 0, Vector2(0.52381, 1), 0.0, 0.0, 0, 0, Vector2(0.952381, 0.208791), 0.0, 0.0, 0, 0]
@@ -46,13 +51,14 @@ radial_accel_max = -93.33
 scale_min = 151.0
 scale_max = 151.0
 scale_curve = SubResource("CurveTexture_sl4p3")
-color = Color(0.477195, 0.458447, 0.447295, 0.403922)
+color = Color(1, 0.4, 0.2, 1)
+color_ramp = SubResource("GradientTexture1D_r0m4r")
 emission_curve = SubResource("CurveTexture_nm2uu")
 
 [sub_resource type="QuadMesh" id="QuadMesh_7yeew"]
-size = Vector2(7, 7)
+size = Vector2(3, 3)
 
-[node name="steam" type="GPUParticles3D" groups=["deletable"]]
+[node name="fire" type="GPUParticles3D" groups=["deletable"]]
 material_override = SubResource("StandardMaterial3D_te6wf")
 amount = 200
 amount_ratio = 0.641

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://sjmoyoqmrlva"]
+[gd_scene load_steps=14 format=3 uid="uid://sjmoyoqmrlva"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fgbiy"]
 [ext_resource type="PackedScene" uid="uid://ksv4a07q3xq" path="res://Bedrock.tscn" id="2_askcx"]
@@ -7,9 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bqivct21bmjwj" path="res://Water.tscn" id="4_47eft"]
 [ext_resource type="PackedScene" uid="uid://cpbe0ic5x5dtu" path="res://Wood.tscn" id="5_xrl17"]
 [ext_resource type="PackedScene" uid="uid://co2dnkmyp5mxl" path="res://Oil.tscn" id="6_pupu0"]
-[ext_resource type="PackedScene" uid="uid://cgwmw6ol28kgx" path="res://Fire.tscn" id="7_n0arg"]
+[ext_resource type="PackedScene" uid="uid://cj8u2r3du68ma" path="res://Fire.tscn" id="7_n0arg"]
 [ext_resource type="PackedScene" uid="uid://dl607keagfwbc" path="res://Glass.tscn" id="8_3ag5q"]
-[ext_resource type="AudioStream" uid="uid://en36st7mmv6f" path="res://audios/waterfall.mp3" id="8_edel2"]
 [ext_resource type="PackedScene" uid="uid://ckwo3rwtd8cxr" path="res://Ice.tscn" id="9_gl0lr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4e04q"]
@@ -45,7 +44,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56181, 0)
 
 [node name="runningAudio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_g0tys")
-
-[node name="rainAudio" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("8_edel2")
-volume_db = 10.0

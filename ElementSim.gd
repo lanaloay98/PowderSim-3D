@@ -1,5 +1,4 @@
 extends Node3D
-
 @export var BedrockScene: PackedScene
 @export var SandScene: PackedScene
 @export var WaterScene: PackedScene
@@ -9,31 +8,36 @@ extends Node3D
 @export var GlassScene: PackedScene
 @export var IceScene: PackedScene
 @export var SteamScene: PackedScene
-@onready var fireAudio = $fireAudio
 @onready var temp_canvas := CanvasLayer.new()
 @onready var temp_label  := Label.new()
-
+@onready var bedrockAudio = $bedrockAudio
+@onready var glassAudio = $glassAudio
+@onready var fireAudio = $fireAudio
+@onready var steamAudio = $steamAudio
+@onready var fluidAudio = $fluidAudio
+@onready var woodAudio = $woodAudio
+@onready var sandAudio = $sandAudio
+@onready var iceAudio = $iceAudio
 const GRID_X = 50
 const GRID_Y = 50
 const GRID_Z = 50
 const TEMP_AIR := 27.0
 const TEMP_WATER := 27.0
-const TEMP_WOOD := 27.0
 const TEMP_SAND := 27.0
-const TEMP_BEDROCK := 27.0
 const TEMP_GLASS := 27.0
 const TEMP_OIL := 27.0
 const TEMP_ICE := 0.0
 const TEMP_FIRE := 600.0
-const TEMP_NEUTRAL := 0.0
-const FIRE_LIFETIME = 5.0
-const WATER_COOLDOWN = 1
-const OIL_COOLDOWN = 1.5
-const FIRE_COOLDOWN = 0.3
-const SAND_MELT = 800.0
-const ICE_MELT = 10
+const FIRE_LIFETIME := 5.0
+const STEAM_LIFETIME := 2.0
+const WATER_COOLDOWN := 1
+const OIL_COOLDOWN := 1.5
+const FIRE_COOLDOWN := 0.5
+const SAND_MELT := 400.0
+const ICE_MELT := 40.0
 const AMBIENT_TEMP := 27.0
-const COOLING_RATE := 2.0
+const COOLING_RATE := 50.0
+const FREEZE_THRESHOLD := 5.0
 
 var filled_cells = {}
 var voxel_nodes = {}
@@ -54,9 +58,9 @@ func _ready():
 			var ground_pos = Vector3i(x, 0, z)
 			filled_cells[ground_pos] = "ground"
 	add_child(temp_canvas)
-	temp_label.text = "temprature: --"
-	temp_label.position = Vector2(16, 16)
-	temp_label.add_theme_color_override("font_color", Color.WHITE)
+	temp_label.text = "Temprature: --"
+	temp_label.position = Vector2(30, 0)
+	temp_label.add_theme_color_override("font_color", Color.BLACK)
 	temp_canvas.add_child(temp_label)
 
 func world_to_grid(world_pos: Vector3) -> Vector3i:
@@ -69,22 +73,32 @@ func add_voxel_at(world_pos: Vector3, type: String, scene: PackedScene):
 		return
 	if filled_cells.get(grid_pos) == "ground":
 		return
-	if type == "sand":
-		voxel_temperature[grid_pos] = 27.0
+	if type == "bedrock":
+		bedrockAudio.play()
+		voxel_temperature[grid_pos] = AMBIENT_TEMP
+	elif type == "glass":
+		glassAudio.play()
+		voxel_temperature[grid_pos] = AMBIENT_TEMP
+	elif type == "sand":
+		sandAudio.play()
+		voxel_temperature[grid_pos] = AMBIENT_TEMP
 	elif type == "fire":
 		if not fireAudio.playing:
 			fireAudio.play()
 		fire_lifetimes[grid_pos] = FIRE_LIFETIME
-		voxel_temperature[grid_pos] = 600.0
+		voxel_temperature[grid_pos] = TEMP_FIRE
 	elif type == "water":
-		voxel_temperature[grid_pos] = 20.0
+		fluidAudio.play()
+		voxel_temperature[grid_pos] = AMBIENT_TEMP
 	elif type == "ice":
-		voxel_temperature[grid_pos] = -10.0
+		iceAudio.play()
+		voxel_temperature[grid_pos] = TEMP_ICE
 	elif type == "oil":
-		voxel_temperature[grid_pos] = 30.0
-	else:
-		voxel_temperature[grid_pos] = 27.0
-	if type == "wood":
+		fluidAudio.play()
+		voxel_temperature[grid_pos] = AMBIENT_TEMP
+	elif type == "wood":
+		woodAudio.play()
+		voxel_temperature[grid_pos] = AMBIENT_TEMP
 		spawn_physical_wood(world_pos)
 		return
 	var voxel = scene.instantiate()	
@@ -95,11 +109,8 @@ func add_voxel_at(world_pos: Vector3, type: String, scene: PackedScene):
 	filled_cells[grid_pos] = type
 	if type in ["water", "sand", "oil", "fire", "ice"]:
 		active_voxels[grid_pos] = true
-	if type == "ice":
-		print("Placed ICE at ", grid_pos) 
 	voxel_nodes[grid_pos] = voxel
 	filled_cells[grid_pos] = type
-	active_voxels[grid_pos] = true
 	activate_neighbors6(grid_pos)
 
 func move_voxel(from: Vector3i, to: Vector3i):
@@ -182,10 +193,17 @@ func _process(_delta):
 				next_active[pos] = true
 			"water":
 				if voxel_temperature.get(pos, 20.0) >= 100.0:
-#					convert_voxel_type(pos, "steam", SteamScene) # if you have steam
+					convert_voxel_type(pos, "steam", SteamScene)
 					next_active[pos] = true
 					continue
 				spawn_liquids(pos, _delta, next_active, WATER_COOLDOWN)
+			"steam":
+				fire_lifetimes[pos] -= _delta
+				if fire_lifetimes[pos] <= 0.0:
+					remove_voxel(pos)
+					fire_lifetimes.erase(pos)
+				else:
+					next_active[pos] = true
 			"oil":
 				spawn_liquids(pos, _delta, next_active, OIL_COOLDOWN)
 			"fire":
@@ -196,6 +214,7 @@ func _process(_delta):
 					process_ice(pos, _delta, next_active)
 	active_voxels = next_active
 	update_fire_audio()
+	update_steam_audio()
 	update_temperature(_delta)
 	update_hover_temperature_label()
 
@@ -211,6 +230,19 @@ func update_fire_audio():
 	else:
 		if fireAudio.playing:
 			fireAudio.stop()
+
+func update_steam_audio():
+	var any_steam := false
+	for k in filled_cells.keys():
+		if filled_cells[k] == "steam":
+			any_steam = true
+			break
+	if any_steam:
+		if not steamAudio.playing:
+			steamAudio.play()
+	else:
+		if steamAudio.playing:
+			steamAudio.stop()
 
 func remove_voxel(pos: Vector3i):
 	var current = pos
@@ -355,24 +387,31 @@ func spawn_fire(pos: Vector3i, _delta: float, next_active: Dictionary):
 		voxel_cooldowns[pos] = cooldown - _delta
 		next_active[pos] = true
 		return
+	var below = pos + Vector3i(0, -1, 0)
+	if filled_cells.get(below, "") == "wood":
+		convert_voxel_type(below, "fire", FireScene)
+		fire_lifetimes[pos] += 2.0
+		next_active[below] = true
+	elif filled_cells.get(below, "") == "oil":
+		convert_voxel_type(below, "fire", FireScene)
+		fire_lifetimes[pos] += 1.5
+		next_active[below] = true
+	elif filled_cells.get(below, "") == "sand":
+		voxel_temperature[below] += 50.0 * _delta
+		if voxel_temperature[below] >= SAND_MELT:
+			convert_voxel_type(below, "glass", GlassScene)
+			next_active[below] = true
+	elif filled_cells.get(below, "") == "ice":
+		convert_voxel_type(below, "water", WaterScene)
+		next_active[below] = true
 	for n in neighbors6(pos):
 		if voxel_temperature.has(n):
 			voxel_temperature[n] += TEMP_FIRE * _delta
 	voxel_cooldowns[pos] = FIRE_COOLDOWN
-	var directions = [
-		Vector3i(1, 0, 0), Vector3i(-1, 0, 0),
-		Vector3i(0, 1, 0), Vector3i(0, -1, 0),
-		Vector3i(0, 0, 1), Vector3i(0, 0, -1),
-		Vector3i(2, 0, 0), Vector3i(-2, 0, 0),
-		Vector3i(0, 2, 0), Vector3i(0, -2, 0),
-		Vector3i(0, 0, 2), Vector3i(0, 0, -2),
-	]
-	directions.shuffle()
-	for dir in directions:
-		var neighbor = pos + dir
+	for neighbor in neighbors26(pos):
 		if filled_cells.get(neighbor, "") == "water":
+			convert_voxel_type(neighbor, "steam", SteamScene)
 			remove_voxel(pos)
-			remove_voxel(neighbor)
 			fire_lifetimes.erase(pos)
 			return
 		if filled_cells.get(neighbor, "") == "oil":
@@ -457,18 +496,23 @@ func convert_voxel_type(pos: Vector3i, new_type: String, new_scene: PackedScene)
 	if new_type == "fire":
 		fire_lifetimes[pos] = FIRE_LIFETIME
 		update_fire_audio()
+	if new_type == "steam":
+		fire_lifetimes[pos] = STEAM_LIFETIME
+	if new_type == "glass":
+		glassAudio.play()
+	if new_type == "water":
+		fluidAudio.play()
+	if new_type == "ice":
+		iceAudio.play()
 
 func process_ice(pos: Vector3i, _delta: float, next_active: Dictionary):
 	if not voxel_temperature.has(pos):
 		return
 	var t = voxel_temperature[pos]
-	if t > 0.0:
-		convert_voxel_type(pos, "water", WaterScene)
-		next_active[pos] = true
-		return
 	for n in neighbors6(pos):
 		if filled_cells.get(n, "") == "water":
-			if voxel_temperature.get(n, 20.0) <= 0.0:
+			voxel_temperature[n] = lerp(voxel_temperature.get(n, AMBIENT_TEMP), 0.0, 0.6)
+			if voxel_temperature[n] <= FREEZE_THRESHOLD:
 				convert_voxel_type(n, "ice", IceScene)
 				next_active[n] = true
 	next_active[pos] = true
@@ -479,10 +523,19 @@ func activate_neighbors6(pos: Vector3i):
 			if filled_cells[n] in ["ice", "water", "fire", "oil", "sand"]:
 				active_voxels[n] = true
 
+func neighbors26(pos: Vector3i) -> Array:
+	var result: Array = []
+	for x in range(-1, 2):
+		for y in range(-1, 2):
+			for z in range(-1, 2):
+				if x == 0 and y == 0 and z == 0:
+					continue
+				result.append(pos + Vector3i(x, y, z))
+	return result
+
 func local_temperature(center: Vector3i) -> float:
 	var total := 0.0
 	var count := 0	
-	var t := 0.0
 	for n in neighbors6(center):
 		if voxel_temperature.has(n):
 			total += voxel_temperature[n]
@@ -502,7 +555,19 @@ func apply_gravity_solid(pos: Vector3i, next_active: Dictionary) -> bool:
 	return false
 
 func update_temperature(delta):
+	var to_cool = []
+	for pos in filled_cells.keys():
+		if filled_cells[pos] == "ice":
+			to_cool.append(pos)
+	for pos in to_cool:
+		for n in neighbors6(pos):
+			if voxel_temperature.has(n):
+				voxel_temperature[n] = lerp(voxel_temperature[n], 0.0, 0.35)
 	var heat_changes = {}
+	var to_evaporate = []
+	var to_glass = []
+	var to_freeze = []
+	var to_melt = []
 	for pos in voxel_temperature.keys():
 		var t = voxel_temperature[pos]
 		var neighbors = neighbors6(pos)
@@ -519,10 +584,6 @@ func update_temperature(delta):
 			voxel_temperature[pos] = max(AMBIENT_TEMP, temp - COOLING_RATE * delta)
 		elif temp < AMBIENT_TEMP:
 			voxel_temperature[pos] = min(AMBIENT_TEMP, temp + COOLING_RATE * delta)
-	var to_evaporate = []
-	var to_glass = []
-	var to_freeze = []
-	var to_melt = []
 	for pos in voxel_temperature.keys():
 		if not filled_cells.has(pos):
 			continue
@@ -531,20 +592,24 @@ func update_temperature(delta):
 		if type == "water" and t >= 100.0:
 			to_evaporate.append(pos)
 			continue
-		if type == "water" and t <= 0.0:
+		if type == "water" and t <= FREEZE_THRESHOLD:
 			to_freeze.append(pos)
 			continue
-		if type == "ice" and t > ICE_MELT:
-			to_melt.append(pos)
-			continue
+		if type == "ice":
+			if not ice_melt_progress.has(pos):
+				ice_melt_progress[pos] = 0.0
+			if t > 0.0:
+				ice_melt_progress[pos] += delta * (t / 30.0)
+			else:
+				ice_melt_progress[pos] = max(0.0, ice_melt_progress[pos] - delta)
+			if ice_melt_progress[pos] >= 1.0:
+				to_melt.append(pos)
 		if type == "sand" and t >= SAND_MELT:
 			to_glass.append(pos)
 			continue
 	for pos in to_evaporate:
 			convert_voxel_type(pos, "steam", SteamScene)
 			voxel_temperature[pos] = 120.0
-			remove_voxel(pos)
-			voxel_temperature.erase(pos)
 	for pos in to_glass:
 		convert_voxel_type(pos, "glass", GlassScene)
 		voxel_temperature[pos] = voxel_temperature.get(pos, SAND_MELT)
@@ -553,7 +618,7 @@ func update_temperature(delta):
 		voxel_temperature[pos] = min(voxel_temperature.get(pos, 0.0), 0.0)
 	for pos in to_melt:
 		convert_voxel_type(pos, "water", WaterScene)
-		voxel_temperature[pos] = max(voxel_temperature.get(pos, 1.0), 1.0)
+		voxel_temperature[pos] = max(voxel_temperature.get(pos, 10.0), 10.0)
 
 func activate_after_conversion(pos: Vector3i):
 	active_voxels[pos] = true

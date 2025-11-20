@@ -11,7 +11,6 @@ extends CharacterBody3D
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
 @onready var walkAudio = $runningAudio
-@onready var rainAudio = $rainAudio
 @onready var elementsim = $"../ElementSim"
 #UI bars
 @onready var walls_bar = $WallsLayer/WallsBar
@@ -47,7 +46,6 @@ var delete_timer = 0.0
 var line_mode:= false
 var line_anchor: Vector3i = Vector3i.ZERO
 var last_line_end: Vector3i = Vector3i(999999, 999999, 999999)
-
 enum BlockType { BEDROCK, WATER, SAND, WOOD, OIL, FIRE, GLASS, ICE}
 var current_block : BlockType = BlockType.BEDROCK
 var Rotate = false
@@ -173,12 +171,6 @@ func _physics_process(delta: float) -> void:
 		walkAudio.play()
 	elif not is_moving and walkAudio.playing:
 		walkAudio.stop()
-	if is_placing and current_block == BlockType.WATER:
-		if not rainAudio.playing:
-			rainAudio.play()
-	else:
-		if rainAudio.playing:
-			rainAudio.stop()
 	_update_ghost_preview()
 
 func _update_ghost_preview() -> void:

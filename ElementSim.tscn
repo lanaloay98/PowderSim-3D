@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://57b7gv388n5j"]
+[gd_scene load_steps=19 format=3 uid="uid://57b7gv388n5j"]
 
 [ext_resource type="Script" path="res://ElementSim.gd" id="1_m5b13"]
 [ext_resource type="PackedScene" uid="uid://ksv4a07q3xq" path="res://Bedrock.tscn" id="3_s4h04"]
@@ -6,11 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://bqivct21bmjwj" path="res://Water.tscn" id="4_xrnxx"]
 [ext_resource type="PackedScene" uid="uid://cpbe0ic5x5dtu" path="res://Wood.tscn" id="5_ixnqj"]
 [ext_resource type="PackedScene" uid="uid://co2dnkmyp5mxl" path="res://Oil.tscn" id="6_xvmk4"]
-[ext_resource type="PackedScene" uid="uid://cgwmw6ol28kgx" path="res://Fire.tscn" id="7_w2lxo"]
+[ext_resource type="PackedScene" uid="uid://cj8u2r3du68ma" path="res://Fire.tscn" id="7_w2lxo"]
 [ext_resource type="PackedScene" uid="uid://dl607keagfwbc" path="res://Glass.tscn" id="8_r448u"]
 [ext_resource type="AudioStream" uid="uid://dqovroyywqw4x" path="res://audios/fireAudio.mp3" id="8_x0lfg"]
 [ext_resource type="PackedScene" uid="uid://ckwo3rwtd8cxr" path="res://Ice.tscn" id="9_linhk"]
-[ext_resource type="PackedScene" uid="uid://bnrqbt3ai8uso" path="res://Steam.tscn" id="10_3kge3"]
+[ext_resource type="PackedScene" uid="uid://ck334e61427gp" path="res://Steam.tscn" id="10_sndn2"]
+[ext_resource type="AudioStream" uid="uid://yodh0bd8fl8a" path="res://audios/fluid.mp3" id="12_7phjx"]
+[ext_resource type="AudioStream" uid="uid://dkhg0lw8pw38q" path="res://audios/steam-hissing-386157.mp3" id="13_bfp1v"]
+[ext_resource type="AudioStream" uid="uid://cgcls246he61t" path="res://audios/glass-clink-57538.mp3" id="14_tqc6d"]
+[ext_resource type="AudioStream" uid="uid://e3vuhewo0tuw" path="res://audios/rock.mp3" id="15_q6ocl"]
+[ext_resource type="AudioStream" uid="uid://dqntm7oyhmung" path="res://audios/wood.mp3" id="16_6u0t4"]
+[ext_resource type="AudioStream" uid="uid://deg3rledl8vnh" path="res://audios/ice.mp3" id="17_md8r5"]
+[ext_resource type="AudioStream" uid="uid://deuifyivmd2in" path="res://audios/sand.mp3" id="17_sfn1x"]
 
 [node name="ElementSim" type="Node3D"]
 script = ExtResource("1_m5b13")
@@ -22,8 +29,36 @@ OilScene = ExtResource("6_xvmk4")
 FireScene = ExtResource("7_w2lxo")
 GlassScene = ExtResource("8_r448u")
 IceScene = ExtResource("9_linhk")
-SteamScene = ExtResource("10_3kge3")
+SteamScene = ExtResource("10_sndn2")
 
 [node name="fireAudio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_x0lfg")
-volume_db = 32.564
+volume_db = 30.0
+
+[node name="fluidAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("12_7phjx")
+volume_db = 45.0
+
+[node name="steamAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("13_bfp1v")
+volume_db = 80.0
+
+[node name="glassAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("14_tqc6d")
+volume_db = 30.0
+
+[node name="bedrockAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("15_q6ocl")
+volume_db = 30.0
+
+[node name="woodAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("16_6u0t4")
+volume_db = 30.0
+
+[node name="sandAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("17_sfn1x")
+volume_db = 80.0
+
+[node name="iceAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("17_md8r5")
+volume_db = 30.0

@@ -14,9 +14,9 @@ config/name="3D"
 run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
-[editor_plugins]
+[audio]
 
-enabled=PackedStringArray("res://addons/zylann.hterrain/plugin.cfg")
+buses/default_bus_layout=""
 
 [global_group]
 

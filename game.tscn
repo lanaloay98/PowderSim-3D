@@ -92,7 +92,7 @@ offset_bottom = 89.0
 
 [node name="SandButton" type="TextureButton" parent="Player/powderlayer/PowderContainer"]
 layout_mode = 2
-tooltip_text = "Sand, heavy particles, turns to glass at 800C"
+tooltip_text = "Sand, heavy particles, turns to glass at 400C"
 texture_normal = ExtResource("3_8fr1y")
 
 [node name="LiquidsLayer" type="CanvasLayer" parent="Player"]
@@ -154,7 +154,7 @@ texture_normal = ExtResource("9_13p3o")
 
 [node name="IceButton" type="TextureButton" parent="Player/SolidsLayer/SolidsContainer" groups=["deletable"]]
 layout_mode = 2
-tooltip_text = "Ice, 0C, turns to water when heated to 10C+"
+tooltip_text = "Ice, turns to water when heated"
 texture_normal = ExtResource("13_35mg4")
 
 [node name="ExplosivesLayer" type="CanvasLayer" parent="Player"]
@@ -165,10 +165,10 @@ anchor_left = 1.0
 anchor_top = 0.326
 anchor_right = 1.0
 anchor_bottom = 0.326
-offset_left = -49.0
-offset_top = 3.752
-offset_right = -1.0
-offset_bottom = 51.752
+offset_left = -46.0
+offset_top = -7.248
+offset_right = 2.0
+offset_bottom = 40.752
 tooltip_text = "Explosives"
 icon = ExtResource("12_vbmqp")
 
@@ -183,6 +183,29 @@ layout_mode = 2
 tooltip_text = "Fire, Ignites flammable materials, Heats air, 600C"
 texture_normal = ExtResource("12_mqces")
 
+[node name="Button" type="Button" parent="Player"]
+offset_right = 32.0
+offset_bottom = 31.0
+tooltip_text = "Welcome to the Sandbox!
+
+• Left-click → place selected block  
+• Right-click → delete block  
+• Scroll → change placement distance  
+• SHIFT + Left Click → draw straight lines  
+• Press R → enables mouse-look / free-looking
+•  Press ESC → disables mouse-look
+•  WASD + arrow keys → player movement
+•  Space → jump
+• Use category buttons (Walls, Powders, Liquids, etc.) to choose block types  
+• Fire spreads and melts things  
+• Water flows and can turn to steam or ice  
+• Sand falls with gravity  
+• Ice can melt  
+• Many elements interact dynamically  
+"
+text = "❓"
+flat = true
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 light_color = Color(1, 0.894118, 0.517647, 1)
@@ -196,8 +219,8 @@ environment = SubResource("Environment_xxjm1")
 [node name="Ground" parent="." instance=ExtResource("1_dic2f")]
 
 [connection signal="pressed" from="Player/WallsLayer/WallsToggleElementBar" to="Player" method="_on_walls_toggle_element_bar_pressed"]
-[connection signal="pressed" from="Player/WallsLayer/WallsBar/Bedrock" to="Player" method="_on_bedrock_pressed"]
 [connection signal="pressed" from="Player/WallsLayer/WallsBar/Bedrock" to="Player" method="_on_bedrock_button_pressed"]
+[connection signal="pressed" from="Player/WallsLayer/WallsBar/Bedrock" to="Player" method="_on_bedrock_pressed"]
 [connection signal="pressed" from="Player/WallsLayer/WallsBar/Glass" to="Player" method="_on_glass_pressed"]
 [connection signal="pressed" from="Player/powderlayer/PowderToggle" to="Player" method="_on_powder_toggle_pressed"]
 [connection signal="pressed" from="Player/powderlayer/PowderContainer/SandButton" to="Player" method="_on_sand_button_pressed"]

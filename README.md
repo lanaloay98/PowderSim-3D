@@ -1,7 +1,7 @@
 🌌 PowderSim-3D — Advanced Element Sandbox
-A mini Powder Toy game, but in full 3D — with fire, water, steam, ice, melting, freezing & voxel physics
+A mini Powder Toy game, but in full 3D — with sand, glass,  wood, bedrock, oil, fire, water, steam, ice, melting, freezing & voxel physics
 Built in Godot 4
-<div align="center"> <img src="https://raw.githubusercontent.com/github/explore/main/topics/godot/godot.png" width="110" /> </div>
+
 ✨ About the Project
 
 3D Mini Powder Toy is a real-time voxel-based element simulation sandbox.
@@ -182,3 +182,4 @@ Leave a star ⭐
 Share it
 
 Contribute ideas or fixes
+

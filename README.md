@@ -144,7 +144,7 @@ Install Godot 4.x
 
 Clone this repository:
 
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
+git clone https://github.com/lanaloay98/PowderSim-3D.git
 
 
 Open the project in Godot
@@ -182,4 +182,5 @@ Leave a star ⭐
 Share it
 
 Contribute ideas or fixes
+
 

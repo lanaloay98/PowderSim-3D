@@ -5,7 +5,7 @@ A real-time 3D voxel sandbox inspired by The Powder Toy, but completely reimagin
 Simulate sand, water, fire, oil, glass, ice, steam, wood, and more — all interacting through physics, temperature, and voxel logic.
 
 📸 Preview
-<p align="center"> <img src="https://github.com/user-attachments/assets/9944ce7d-30f3-4057-95e9-aa065b09055a" width="80%" /> <br /><br /> <img src="https://github.com/user-attachments/assets/05116a07-8336-4a44-b73b-12420a8d77a9" width="80%" /> <br /><br /> <img src="https://github.com/user-attachments/assets/3b6d4c82-6265-4d1a-8fa8-7c7b5fccc136" width="80%" /> <br /><br /> <img src="https://github.com/user-attachments/assets/a007cd6c-4492-479a-8a43-42707bb083f6" width="80%" /> <br /><br /> <img src="https://github.com/user-attachments/assets/69b7a835-c626-4957-b5fc-b657d1040184" width="80%" /> </p>
+<p align="center"> <img src="https://github.com/user-attachments/assets/9944ce7d-30f3-4057-95e9-aa065b09055a" width="80%" /> <br /><br /> <img src="https://github.com/user-attachments/assets/3b6d4c82-6265-4d1a-8fa8-7c7b5fccc136" width="80%" /> <br /><br /> <img src="https://github.com/user-attachments/assets/a007cd6c-4492-479a-8a43-42707bb083f6" width="80%" /> <br /><br /> <img src="https://github.com/user-attachments/assets/69b7a835-c626-4957-b5fc-b657d1040184" width="80%" /> </p>
 ✨ Overview
 
 PowderSim-3D is a real-time voxel simulation sandbox.
@@ -165,3 +165,4 @@ More voxel materials
 Improved UI
 
 Performance improvements
+

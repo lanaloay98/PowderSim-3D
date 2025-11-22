@@ -10,13 +10,14 @@ Simulate sand, water, fire, oil, glass, ice, steam, wood, and more — all inter
 
 PowderSim-3D is a real-time voxel simulation sandbox.
 Every voxel behaves according to physical rules: falling, flowing, burning, melting, freezing, heating, cooling, and more.
-
 You can place voxels freely, delete them, draw lines, build structures, or simply watch the chaos unfold.
 
 🌟 Features
 🧩 3D Voxel Simulation
 
 50×50×50 simulation grid
+![sandGIF](https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071)
+![BedrockGlassGIF](https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475)
 
 Instant voxel placement & deletion
 
@@ -165,5 +166,6 @@ More voxel materials
 Improved UI
 
 Performance improvements
+
 
 

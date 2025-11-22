@@ -5,22 +5,37 @@ A real-time 3D voxel sandbox inspired by The Powder Toy, but completely reimagin
 Simulate sand, water, fire, oil, glass, ice, steam, wood, and more — all interacting through physics, temperature, and voxel logic.
 
 📸 Preview
-<p align="center"> <img src="https://github.com/user-attachments/assets/9944ce7d-30f3-4057-95e9-aa065b09055a" width="25%" /> <br /><br /> <img src="https://github.com/user-attachments/assets/3b6d4c82-6265-4d1a-8fa8-7c7b5fccc136" width="25%" /> <br /><br /> <img src="https://github.com/user-attachments/assets/a007cd6c-4492-479a-8a43-42707bb083f6" width="25%" /> <br /><br /> <img src="https://github.com/user-attachments/assets/69b7a835-c626-4957-b5fc-b657d1040184" width="25%" /> </p>
-✨ Overview
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9944ce7d-30f3-4057-95e9-aa065b09055a" width="45%" />
+  <img src="https://github.com/user-attachments/assets/3b6d4c82-6265-4d1a-8fa8-7c7b5fccc136" width="45%" />
+</p>
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a007cd6c-4492-479a-8a43-42707bb083f6" width="45%" />
+  <img src="https://github.com/user-attachments/assets/69b7a835-c626-4957-b5fc-b657d1040184" width="45%" />
+</p>
+
+✨ Overview
 PowderSim-3D is a real-time voxel simulation sandbox.
 Every voxel behaves according to physical rules: falling, flowing, burning, melting, freezing, heating, cooling, and more.
 You can place voxels freely, delete them, draw lines, build structures, or simply watch the chaos unfold.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071" width="45%" />
+  <img src="https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475" width="45%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a6ed462c-cf64-443e-94b1-a1d0d55b69b8" width="45%" />
+  <img src="https://github.com/user-attachments/assets/82636e4b-506e-4e60-aef3-008329a9068d" width="45%" />
+</p>
+
 
 🌟 Features
+
 🧩 3D Voxel Simulation
 
 50×50×50 simulation grid
-![sandGIF](https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071)
-![BedrockGlassGIF](https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475)
-![WoodSnowGIF](https://github.com/user-attachments/assets/a6ed462c-cf64-443e-94b1-a1d0d55b69b8)
-![OilWaterGIF](https://github.com/user-attachments/assets/82636e4b-506e-4e60-aef3-008329a9068d)
 
 Instant voxel placement & deletion
 
@@ -31,6 +46,7 @@ Ghost placement preview
 Adjustable placement distance
 
 First-person controller
+
 
 🌡️ Temperature & State System
 
@@ -169,6 +185,7 @@ More voxel materials
 Improved UI
 
 Performance improvements
+
 
 
 

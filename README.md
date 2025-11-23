@@ -1,34 +1,19 @@
-![WaterFreezeGIF](https://github.com/user-attachments/assets/28bc8b24-e43f-4eb4-b03a-9d9e564f5263)🌌 PowderSim-3D
-A fully 3D voxel-based Powder Toy simulation — built in Godot 4
+🌌 PowderSim-3D
 
-A real-time 3D voxel sandbox inspired by The Powder Toy, but completely reimagined in three dimensions.
-Simulate sand, water, fire, oil, glass, ice, steam, wood, and more — all interacting through physics, temperature, and voxel logic.
+A fully 3D voxel-based Powder Toy–style simulation — built in Godot 4
+
+A real-time voxel sandbox where sand, water, fire, oil, glass, ice, steam, and wood interact through physics, temperature, and voxel logic.
 
 📸 Preview
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/9944ce7d-30f3-4057-95e9-aa065b09055a" width="45%" />
-  <img src="https://github.com/user-attachments/assets/3b6d4c82-6265-4d1a-8fa8-7c7b5fccc136" width="45%" />
-</p>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/a007cd6c-4492-479a-8a43-42707bb083f6" width="45%" />
-  <img src="https://github.com/user-attachments/assets/69b7a835-c626-4957-b5fc-b657d1040184" width="45%" />
-</p>
-
-✨ Overview
-PowderSim-3D is a real-time voxel simulation sandbox.
-Every voxel behaves according to physical rules: falling, flowing, burning, melting, freezing, heating, cooling, and more.
-You can place voxels freely, delete them, draw lines, build structures, or simply watch the chaos unfold.
-
-🌟 Features
-
-🧩 3D Voxel Simulation
+<p align="center"> <img src="https://github.com/user-attachments/assets/9944ce7d-30f3-4057-95e9-aa065b09055a" width="45%" /> <img src="https://github.com/user-attachments/assets/3b6d4c82-6265-4d1a-8fa8-7c7b5fccc136" width="45%" /> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/a007cd6c-4492-479a-8a43-42707bb083f6" width="45%" /> <img src="https://github.com/user-attachments/assets/69b7a835-c626-4957-b5fc-b657d1040184" width="45%" /> </p>
+✨ Features
+<details> <summary><h2>🧩 3D Voxel Simulation</h2></summary>
 
 50×50×50 simulation grid
 
 Instant voxel placement & deletion
 
-Line-mode placement (Shift + Click)
+Line-mode (Shift + Click)
 
 Ghost placement preview
 
@@ -36,58 +21,51 @@ Adjustable placement distance
 
 First-person controller
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071" width="45%" />
-  <img src="https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475" width="45%" />
-</p>
-![SandToGlass](https://github.com/user-attachments/assets/248d12b1-8030-4303-b68d-9bc97fed0912)
+<p align="center"> <img src="https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071" width="45%" /> <img src="https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475" width="45%" /> </p> <p align="center"> <!-- Sand falling --> <img src="https://github.com/user-attachments/assets/248d12b1-8030-4303-b68d-9bc97fed0912" width="45%"/> </p> </details>
+<details> <summary><h2>🌡️ Temperature & State System</h2></summary>
 
-🌡️ Temperature & State System
+Each voxel tracks its temperature
 
-Each voxel has its own temperature
+Heat diffusion
 
 Fire heats surroundings
 
-Water boils → steam
+Ambient cooling/warming
 
-Water freezes → ice
+Hover thermometer
 
-Ice melts → water
+State transitions:
 
-Sand melts → glass
+Water → steam
 
-Heat diffusion across neighbors
+Water → ice
 
-Cooling & warming toward ambient
+Ice → water
 
-Hover thermometer (displays exact temp)
+Sand → glass
 
-🌊 Liquid Physics
+🔥 State Change GIFs
+<p align="center"> <img src="https://github.com/user-attachments/assets/0fb182bb-2464-48c3-9e6e-5dbed5593b2f" width="45%" /> <img src="https://github.com/user-attachments/assets/bff8cd25-b61f-42be-a166-58160e6a2d3a" width="45%" /> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/785ab0f2-96f8-46ac-9070-a470bacd628a" width="45%" /> <img src="https://github.com/user-attachments/assets/412efbc4-1cc9-48f2-a17a-11748757ca5e" width="45%" /> </p> </details>
+<details> <summary><h2>🌊 Liquid Physics</h2></summary>
 
-Water & oil flow & spread
+Water & oil flow
 
 Water floats above oil
 
 Fire + water → steam
 
-Steam rises and dissipates
+Steam rises/dissipates
 
 Smooth liquid swapping logic
 
-![WaterBoilGIF](https://github.com/user-attachments/assets/785ab0f2-96f8-46ac-9070-a470bacd628a)
-![IceWaterGIF](https://github.com/user-attachments/assets/bff8cd25-b61f-42be-a166-58160e6a2d3a)
-![SandToGlass](https://github.com/user-attachments/assets/412efbc4-1cc9-48f2-a17a-11748757ca5e)
-![WaterFreezeGIF](https://github.com/user-attachments/assets/0fb182bb-2464-48c3-9e6e-5dbed5593b2f)
-![BurningOilGIF](https://github.com/user-attachments/assets/5b0dcfbc-cf82-4c01-bad9-227f69723729)
-![wood burned](https://github.com/user-attachments/assets/8c5f1549-dba2-46e3-9b82-a1068cbee3ef)
-
-🔥 Fire Simulation
+<p align="center"> <!-- oil floating / switching elements --> <img src="https://github.com/user-attachments/assets/28bc8b24-e43f-4eb4-b03a-9d9e564f5263" width="45%" /> </p> </details>
+<details> <summary><h2>🔥 Fire Simulation</h2></summary>
 
 Burns wood
 
 Ignites oil
 
-Melts sand
+Melts sand → glass
 
 Boils water
 
@@ -97,32 +75,37 @@ Fire lifetime & decay
 
 Dynamic fire audio
 
-🌲 Wood System
+🔥 Fire GIFs
+<p align="center"> <img src="https://github.com/user-attachments/assets/5b0dcfbc-cf82-4c01-bad9-227f69723729" width="45%" /> <img src="https://github.com/user-attachments/assets/8c5f1549-dba2-46e3-9b82-a1068cbee3ef" width="45%" /> </p> </details>
+<details> <summary><h2>🌲 Wood System</h2></summary>
+Voxel Wood
 
-Voxel Wood — follows voxel rules
+Burns
 
-Physical Wood (RigidBody) — falls, rotates, burns
+Interacts with heat/fire
 
-Both types burn and interact with fire & heat
+RigidBody Wood
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/a6ed462c-cf64-443e-94b1-a1d0d55b69b8" width="45%" />
-  <img src="https://github.com/user-attachments/assets/82636e4b-506e-4e60-aef3-008329a9068d" width="45%" />
-</p>
+Falls & rotates
 
-🔊 Dynamic Audio
+Full physics interactions
 
-Fire loop
+Burns dynamically
 
-Steam hiss
+<p align="center"> <img src="https://github.com/user-attachments/assets/a6ed462c-cf64-443e-94b1-a1d0d55b69b8" width="45%" /> <img src="https://github.com/user-attachments/assets/82636e4b-506e-4e60-aef3-008329a9068d" width="45%" /> </p> </details>
+<details> <summary><h2>🔊 Dynamic Audio</h2></summary>
+
+Fire crackling
+
+Steam hissing
 
 Water/oil splashes
 
-Sand drop
+Sand impacts
 
-Ice crack
+Ice cracking
 
-Glass click
+Glass clicking
 
 Wood impact
 
@@ -130,22 +113,24 @@ Bedrock thud
 
 Footsteps
 
-Ambient background adjusts based on materials in scene
+Ambient audio reacts to materials
 
-🧪 Available Elements
+</details>
+<details> <summary><h2>🧪 Available Elements</h2></summary>
 Element	Behavior	Emoji
 Sand	Falls, slides, melts → glass	🏖️
 Water	Flows, freezes, evaporates	💧
 Oil	Flammable, flows	🛢️
-Fire	Spreads, melts, ignites, heats	🔥
+Fire	Spreads, heats, ignites	🔥
 Ice	Freezes water, melts	🧊
-Glass	Solid, formed from melted sand	🪟
+Glass	Solid, made from melted sand	🪟
 Steam	Rises, dissipates	☁️
-Wood	Burns (voxel + RigidBody)	🌲
+Wood	Burns (voxel & RigidBody)	🌲
 Bedrock	Indestructible	🪨
-🎮 Controls
+</details>
+<details> <summary><h2>🎮 Controls</h2></summary>
 Action	Input
-Move	W A S D / Arrow Keys
+Move	WASD / Arrow Keys
 Jump	Space
 Look	Mouse
 Enable mouse-look	R
@@ -154,15 +139,17 @@ Delete block	Right Click
 Line-mode	Shift + Left Click
 Adjust placement distance	Mouse Wheel
 Open element menu	Left Click
-Show help/tooltips	Hover ?
-📦 Project Structure
-/ElementSim.gd      # Simulation engine (fire, water, oil, heat, logic)
-/Player.gd          # FPS controller, placement, ghost preview
-/UI/                # Menus, element selector UI
-/Scenes/            # Voxel scenes (sand, water, fire, etc.)
-/Audio/             # All sound effects
+Show help	Hover ?
+</details>
+<details> <summary><h2>📦 Project Structure</h2></summary>
+/ElementSim.gd      # Simulation engine (fire, liquids, temp, logic)
+/Player.gd          # FPS movement, voxel placement, ghost preview
+/UI/                # Menu & element selector UI
+/Scenes/            # Voxel element scenes
+/Audio/             # Sound effects
 
-🛠 Installation
+</details>
+<details> <summary><h2>🛠 Installation</h2></summary>
 git clone https://github.com/lanaloay98/PowderSim-3D.git
 
 
@@ -172,9 +159,10 @@ Open the project
 
 Run the main scene
 
-Enjoy the sandbox 🔥💧🧊
+Enjoy 🔥💧🧊
 
-🧭 Roadmap
+</details>
+<details> <summary><h2>🧭 Roadmap</h2></summary>
 
 Pressure simulation
 
@@ -188,12 +176,8 @@ Save / load system
 
 More voxel materials
 
-Improved UI
+UI improvements
 
-Performance improvements
+Performance optimizations
 
-
-
-
-
-
+</details>

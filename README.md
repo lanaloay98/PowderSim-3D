@@ -21,10 +21,11 @@ Adjustable placement distance
 
 First-person controller
 
-<p align="center"> <img src="https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071" width="45%" /> <img src="https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475" width="45%" /> </p> <p align="center"> <!-- Sand falling --> <img src="https://github.com/user-attachments/assets/248d12b1-8030-4303-b68d-9bc97fed0912" width="45%"/> </p> </details>
+GIFs (click to load)
+<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071" width="45%" /> <img src="https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475" width="45%" /> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/248d12b1-8030-4303-b68d-9bc97fed0912" width="45%"/> </p> </details> </details>
 <details> <summary><h2>🌡️ Temperature & State System</h2></summary>
 
-Each voxel tracks its temperature
+Every voxel tracks its temperature
 
 Heat diffusion
 
@@ -44,8 +45,8 @@ Water → steam
 
 Sand → glass
 
-🔥 State Change GIFs
-<p align="center"> <img src="https://github.com/user-attachments/assets/0fb182bb-2464-48c3-9e6e-5dbed5593b2f" width="45%" /> <img src="https://github.com/user-attachments/assets/bff8cd25-b61f-42be-a166-58160e6a2d3a" width="45%" /> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/785ab0f2-96f8-46ac-9070-a470bacd628a" width="45%" /> <img src="https://github.com/user-attachments/assets/412efbc4-1cc9-48f2-a17a-11748757ca5e" width="45%" /> </p> </details>
+GIFs (click to load)
+<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/0fb182bb-2464-48c3-9e6e-5dbed5593b2f" width="45%" /> <img src="https://github.com/user-attachments/assets/bff8cd25-b61f-42be-a166-58160e6a2d3a" width="45%" /> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/785ab0f2-96f8-46ac-9070-a470bacd628a" width="45%" /> <img src="https://github.com/user-attachments/assets/412efbc4-1cc9-48f2-a17a-11748757ca5e" width="45%" /> </p> </details> </details>
 <details> <summary><h2>🌊 Liquid Physics</h2></summary>
 
 Water & oil flow
@@ -54,45 +55,47 @@ Water floats above oil
 
 Fire + water → steam
 
-Steam rises/dissipates
+Steam rises & dissipates
 
-Smooth liquid swapping logic
+Liquid-swapping logic
 
-<p align="center"> <!-- oil floating / switching elements --> <img src="https://github.com/user-attachments/assets/28bc8b24-e43f-4eb4-b03a-9d9e564f5263" width="45%" /> </p> </details>
+GIF (click to load)
+<details> <summary>Show animation</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/28bc8b24-e43f-4eb4-b03a-9d9e564f5263" width="45%" /> </p> </details> </details>
 <details> <summary><h2>🔥 Fire Simulation</h2></summary>
 
 Burns wood
 
 Ignites oil
 
-Melts sand → glass
+Melts sand
 
 Boils water
 
 Temperature-driven spread
 
-Fire lifetime & decay
+Fire decay
 
-Dynamic fire audio
+Dynamic audio
 
-🔥 Fire GIFs
-<p align="center"> <img src="https://github.com/user-attachments/assets/5b0dcfbc-cf82-4c01-bad9-227f69723729" width="45%" /> <img src="https://github.com/user-attachments/assets/8c5f1549-dba2-46e3-9b82-a1068cbee3ef" width="45%" /> </p> </details>
+GIFs (click to load)
+<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/5b0dcfbc-cf82-4c01-bad9-227f69723729" width="45%" /> <img src="https://github.com/user-attachments/assets/8c5f1549-dba2-46e3-9b82-a1068cbee3ef" width="45%" /> </p> </details> </details>
 <details> <summary><h2>🌲 Wood System</h2></summary>
 Voxel Wood
 
 Burns
 
-Interacts with heat/fire
+Interacts with temperature
 
 RigidBody Wood
 
-Falls & rotates
+Falls, rotates, collides
 
-Full physics interactions
+Physically simulated
 
 Burns dynamically
 
-<p align="center"> <img src="https://github.com/user-attachments/assets/a6ed462c-cf64-443e-94b1-a1d0d55b69b8" width="45%" /> <img src="https://github.com/user-attachments/assets/82636e4b-506e-4e60-aef3-008329a9068d" width="45%" /> </p> </details>
+GIFs (click to load)
+<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/a6ed462c-cf64-443e-94b1-a1d0d55b69b8" width="45%" /> <img src="https://github.com/user-attachments/assets/82636e4b-506e-4e60-aef3-008329a9068d" width="45%" /> </p> </details> </details>
 <details> <summary><h2>🔊 Dynamic Audio</h2></summary>
 
 Fire crackling
@@ -103,17 +106,17 @@ Water/oil splashes
 
 Sand impacts
 
-Ice cracking
+Ice cracks
 
-Glass clicking
+Glass clicks
 
-Wood impact
+Wood thud
 
-Bedrock thud
+Bedrock hits
 
 Footsteps
 
-Ambient audio reacts to materials
+Ambient audio changes based on materials
 
 </details>
 <details> <summary><h2>🧪 Available Elements</h2></summary>
@@ -123,7 +126,7 @@ Water	Flows, freezes, evaporates	💧
 Oil	Flammable, flows	🛢️
 Fire	Spreads, heats, ignites	🔥
 Ice	Freezes water, melts	🧊
-Glass	Solid, made from melted sand	🪟
+Glass	Solid, formed from melted sand	🪟
 Steam	Rises, dissipates	☁️
 Wood	Burns (voxel & RigidBody)	🌲
 Bedrock	Indestructible	🪨
@@ -137,14 +140,14 @@ Enable mouse-look	R
 Place block	Left Click
 Delete block	Right Click
 Line-mode	Shift + Left Click
-Adjust placement distance	Mouse Wheel
-Open element menu	Left Click
-Show help	Hover ?
+Adjust distance	Mouse Wheel
+Element menu	Left Click
+Help	Hover ?
 </details>
 <details> <summary><h2>📦 Project Structure</h2></summary>
 /ElementSim.gd      # Simulation engine (fire, liquids, temp, logic)
-/Player.gd          # FPS movement, voxel placement, ghost preview
-/UI/                # Menu & element selector UI
+/Player.gd          # FPS controller, placement, ghost preview
+/UI/                # Menus & element selector
 /Scenes/            # Voxel element scenes
 /Audio/             # Sound effects
 
@@ -178,6 +181,7 @@ More voxel materials
 
 UI improvements
 
-Performance optimizations
+Performance upgrades
 
 </details>
+

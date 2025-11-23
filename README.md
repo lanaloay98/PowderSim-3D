@@ -97,7 +97,8 @@ Physically simulated
 Burns dynamically
 
 GIFs (click to load)
-<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/a6ed462c-cf64-443e-94b1-a1d0d55b69b8" width="45%" /> </p> </details> </details>
+
+<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/8c6a7b99-e270-48c5-9322-f42f186b96af" width="45%" /> </p> </details> </details>
 <details> <summary><h2>🔊 Dynamic Audio</h2></summary>
 
 Fire crackling
@@ -220,6 +221,7 @@ UI improvements
 Performance upgrades
 
 </details>
+
 
 
 

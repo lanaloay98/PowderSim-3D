@@ -48,7 +48,7 @@ Water → steam
 Sand → glass
 
 GIFs (click to load)
-<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/0fb182bb-2464-48c3-9e6e-5dbed5593b2f" width="45%" /> <img src="https://github.com/user-attachments/assets/bff8cd25-b61f-42be-a166-58160e6a2d3a" width="45%" /> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/412efbc4-1cc9-48f2-a17a-11748757ca5e" width="45%" /> </p></details><p align="center">  </p> </details> 
+<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/0fb182bb-2464-48c3-9e6e-5dbed5593b2f" width="45%" /> <img src="https://github.com/user-attachments/assets/bff8cd25-b61f-42be-a166-58160e6a2d3a" width="45%" /> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/412efbc4-1cc9-48f2-a17a-11748757ca5e" width="45%" /> <img src="(https://github.com/user-attachments/assets/9a5a76e7-366d-4afa-b8ea-d1a06c2443f0)" width="45%" /> </p></details><p align="center">  </p> </details> 
 <details> <summary><h2>🌊 Liquid Physics</h2></summary>
 
 Water & oil flow
@@ -221,6 +221,7 @@ UI improvements
 Performance upgrades
 
 </details>
+
 
 
 

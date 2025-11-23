@@ -36,11 +36,11 @@ Hover thermometer
 
 State transitions:
 
-Water → steam
-
 Water → ice
 
 Ice → water
+
+Water → steam
 
 Sand → glass
 
@@ -181,3 +181,4 @@ UI improvements
 Performance optimizations
 
 </details>
+

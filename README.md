@@ -22,7 +22,7 @@ Adjustable placement distance
 First-person controller
 
 GIFs (click to load)
-<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071" width="45%" /> <img src="https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475" width="45%" /> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/248d12b1-8030-4303-b68d-9bc97fed0912" width="45%"/> </p> </details> </details>
+<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071" width="45%" /> <img src="https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475" width="45%" /> </p> </details> </details>
 <details> <summary><h2>🌡️ Temperature & State System</h2></summary>
 
 Every voxel tracks its temperature
@@ -46,7 +46,7 @@ Water → steam
 Sand → glass
 
 GIFs (click to load)
-<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/0fb182bb-2464-48c3-9e6e-5dbed5593b2f" width="45%" /> <img src="https://github.com/user-attachments/assets/bff8cd25-b61f-42be-a166-58160e6a2d3a" width="45%" /> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/785ab0f2-96f8-46ac-9070-a470bacd628a" width="45%" /> <img src="https://github.com/user-attachments/assets/412efbc4-1cc9-48f2-a17a-11748757ca5e" width="45%" /> </p> </details> </details>
+<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/0fb182bb-2464-48c3-9e6e-5dbed5593b2f" width="45%" /> <img src="https://github.com/user-attachments/assets/bff8cd25-b61f-42be-a166-58160e6a2d3a" width="45%" /> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/785ab0f2-96f8-46ac-9070-a470bacd628a" width="45%" /> <img src="https://github.com/user-attachments/assets/412efbc4-1cc9-48f2-a17a-11748757ca5e" width="45%" /> </p><p align="center"> <img src="https://github.com/user-attachments/assets/248d12b1-8030-4303-b68d-9bc97fed0912" width="45%"/> </p> </details> </details>
 <details> <summary><h2>🌊 Liquid Physics</h2></summary>
 
 Water & oil flow
@@ -184,4 +184,5 @@ UI improvements
 Performance upgrades
 
 </details>
+
 

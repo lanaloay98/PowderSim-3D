@@ -1,4 +1,6 @@
-🌌 PowderSim-3D
+<h1 align="center" style="font-size: 3.2rem; font-weight: 900; color: #222;">
+  PowderSim-3D
+</h1>
 
 A fully 3D voxel-based Powder Toy–style simulation — built in Godot 4
 
@@ -46,7 +48,7 @@ Water → steam
 Sand → glass
 
 GIFs (click to load)
-<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/0fb182bb-2464-48c3-9e6e-5dbed5593b2f" width="45%" /> <img src="https://github.com/user-attachments/assets/bff8cd25-b61f-42be-a166-58160e6a2d3a" width="45%" /> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/785ab0f2-96f8-46ac-9070-a470bacd628a" width="45%" /> <img src="https://github.com/user-attachments/assets/412efbc4-1cc9-48f2-a17a-11748757ca5e" width="45%" /> </p><p align="center"> <img src="https://github.com/user-attachments/assets/248d12b1-8030-4303-b68d-9bc97fed0912" width="45%"/> </p> </details> </details>
+<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/0fb182bb-2464-48c3-9e6e-5dbed5593b2f" width="45%" /> <img src="https://github.com/user-attachments/assets/bff8cd25-b61f-42be-a166-58160e6a2d3a" width="45%" /> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/785ab0f2-96f8-46ac-9070-a470bacd628a" width="45%" /> <img src="https://github.com/user-attachments/assets/412efbc4-1cc9-48f2-a17a-11748757ca5e" width="45%" /> </p></details>
 <details> <summary><h2>🌊 Liquid Physics</h2></summary>
 
 Water & oil flow
@@ -119,42 +121,75 @@ Footsteps
 Ambient audio changes based on materials
 
 </details>
+
 <details> <summary><h2>🧪 Available Elements</h2></summary>
+  
 Element	Behavior	Emoji
+  
 Sand	Falls, slides, melts → glass	🏖️
+  
 Water	Flows, freezes, evaporates	💧
+
 Oil	Flammable, flows	🛢️
+
 Fire	Spreads, heats, ignites	🔥
+
 Ice	Freezes water, melts	🧊
+
 Glass	Solid, formed from melted sand	🪟
-Steam	Rises, dissipates	☁️
+
+Steam	formed when water extinguishes fire	☁️
+
 Wood	Burns (voxel & RigidBody)	🌲
+
 Bedrock	Indestructible	🪨
+
 </details>
+
 <details> <summary><h2>🎮 Controls</h2></summary>
+  
 Action	Input
+  
 Move	WASD / Arrow Keys
+
 Jump	Space
+
 Look	Mouse
+
 Enable mouse-look	R
+
+Disable mouse-look	Esc
+
 Place block	Left Click
+
 Delete block	Right Click
+
 Line-mode	Shift + Left Click
+
 Adjust distance	Mouse Wheel
+
 Element menu	Left Click
+
 Help	Hover ?
+
 </details>
+
 <details> <summary><h2>📦 Project Structure</h2></summary>
+  
 /ElementSim.gd      # Simulation engine (fire, liquids, temp, logic)
+
 /Player.gd          # FPS controller, placement, ghost preview
+
 /UI/                # Menus & element selector
+
 /Scenes/            # Voxel element scenes
+
 /Audio/             # Sound effects
 
 </details>
 <details> <summary><h2>🛠 Installation</h2></summary>
+  
 git clone https://github.com/lanaloay98/PowderSim-3D.git
-
 
 Install Godot 4.x
 
@@ -165,6 +200,7 @@ Run the main scene
 Enjoy 🔥💧🧊
 
 </details>
+
 <details> <summary><h2>🧭 Roadmap</h2></summary>
 
 Pressure simulation
@@ -184,5 +220,6 @@ UI improvements
 Performance upgrades
 
 </details>
+
 
 

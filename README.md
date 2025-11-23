@@ -62,7 +62,7 @@ Steam rises & dissipates
 Liquid-swapping logic
 
 GIF (click to load)
-<details> <summary>Show animation</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/28bc8b24-e43f-4eb4-b03a-9d9e564f5263" width="45%" /> </p> </details> </details>
+<details> <summary>Show animation</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/28bc8b24-e43f-4eb4-b03a-9d9e564f5263" width="45%" /><img src="https://github.com/user-attachments/assets/82636e4b-506e-4e60-aef3-008329a9068d" width="45%" /> </p> </details> </details>
 <details> <summary><h2>🔥 Fire Simulation</h2></summary>
 
 Burns wood
@@ -220,6 +220,7 @@ UI improvements
 Performance upgrades
 
 </details>
+
 
 
 

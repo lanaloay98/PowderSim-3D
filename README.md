@@ -24,7 +24,7 @@ Adjustable placement distance
 First-person controller
 
 GIFs (click to load)
-<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071" width="45%" /> <img src="https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475" width="45%" />  <img src="https://github.com/user-attachments/assets/c1aa7950-fa64-4ee5-a6ea-a4c08f825b68" width="45%" /> <img src="https://github.com/user-attachments/assets/551b031d-5b57-4d8c-a559-5124ab81a58b" width="45%" /> </p> </details> </details>
+<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071" width="45%" /> <img src="https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475" width="45%" />  <img src="https://github.com/user-attachments/assets/c1aa7950-fa64-4ee5-a6ea-a4c08f825b68" width="45%" /> <img src="https://github.com/user-attachments/assets/551b031d-5b57-4d8c-a559-5124ab81a58b" width="45%" /> <img src="https://github.com/user-attachments/assets/43c02dae-4e0c-402d-8e3d-0f9b329bcd32" width="45%" /> </p> </details> </details>
 <details> <summary><h2>🌡️ Temperature & State System</h2></summary>
 
 Every voxel tracks its temperature
@@ -119,13 +119,9 @@ Bedrock hits
 
 Footsteps
 
-Ambient audio changes based on materials
+Background sea and wind audio
 
-
-
-https://github.com/user-attachments/assets/f8430efc-d6be-4b74-98ab-019e1522d384
-
-
+<details><p align="center"> <img src="https://github.com/user-attachments/assets/c3c71276-5bc0-412b-9c9c-da0ed81e56f7" width="45%" /> </p> </details> </details>
 
 </details>
 
@@ -227,6 +223,7 @@ UI improvements
 Performance upgrades
 
 </details>
+
 
 
 

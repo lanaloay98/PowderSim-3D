@@ -1,4 +1,4 @@
-🌌 PowderSim-3D
+![WaterFreezeGIF](https://github.com/user-attachments/assets/28bc8b24-e43f-4eb4-b03a-9d9e564f5263)🌌 PowderSim-3D
 A fully 3D voxel-based Powder Toy simulation — built in Godot 4
 
 A real-time 3D voxel sandbox inspired by The Powder Toy, but completely reimagined in three dimensions.
@@ -20,17 +20,6 @@ PowderSim-3D is a real-time voxel simulation sandbox.
 Every voxel behaves according to physical rules: falling, flowing, burning, melting, freezing, heating, cooling, and more.
 You can place voxels freely, delete them, draw lines, build structures, or simply watch the chaos unfold.
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071" width="45%" />
-  <img src="https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475" width="45%" />
-</p>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/a6ed462c-cf64-443e-94b1-a1d0d55b69b8" width="45%" />
-  <img src="https://github.com/user-attachments/assets/82636e4b-506e-4e60-aef3-008329a9068d" width="45%" />
-</p>
-
-
 🌟 Features
 
 🧩 3D Voxel Simulation
@@ -47,6 +36,11 @@ Adjustable placement distance
 
 First-person controller
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071" width="45%" />
+  <img src="https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475" width="45%" />
+</p>
+![SandToGlass](https://github.com/user-attachments/assets/248d12b1-8030-4303-b68d-9bc97fed0912)
 
 🌡️ Temperature & State System
 
@@ -80,6 +74,13 @@ Steam rises and dissipates
 
 Smooth liquid swapping logic
 
+![WaterBoilGIF](https://github.com/user-attachments/assets/785ab0f2-96f8-46ac-9070-a470bacd628a)
+![IceWaterGIF](https://github.com/user-attachments/assets/bff8cd25-b61f-42be-a166-58160e6a2d3a)
+![SandToGlass](https://github.com/user-attachments/assets/412efbc4-1cc9-48f2-a17a-11748757ca5e)
+![WaterFreezeGIF](https://github.com/user-attachments/assets/0fb182bb-2464-48c3-9e6e-5dbed5593b2f)
+![BurningOilGIF](https://github.com/user-attachments/assets/5b0dcfbc-cf82-4c01-bad9-227f69723729)
+![wood burned](https://github.com/user-attachments/assets/8c5f1549-dba2-46e3-9b82-a1068cbee3ef)
+
 🔥 Fire Simulation
 
 Burns wood
@@ -103,6 +104,11 @@ Voxel Wood — follows voxel rules
 Physical Wood (RigidBody) — falls, rotates, burns
 
 Both types burn and interact with fire & heat
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a6ed462c-cf64-443e-94b1-a1d0d55b69b8" width="45%" />
+  <img src="https://github.com/user-attachments/assets/82636e4b-506e-4e60-aef3-008329a9068d" width="45%" />
+</p>
 
 🔊 Dynamic Audio
 
@@ -185,6 +191,7 @@ More voxel materials
 Improved UI
 
 Performance improvements
+
 
 
 

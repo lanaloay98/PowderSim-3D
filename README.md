@@ -22,10 +22,9 @@ Ghost placement preview
 Adjustable placement distance
 
 First-person controller
-![wsdGIF](https://github.com/user-attachments/assets/c1aa7950-fa64-4ee5-a6ea-a4c08f825b68)
 
 GIFs (click to load)
-<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071" width="45%" /> <img src="https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475" width="45%" />  <img src="https://github.com/user-attachments/assets/c1aa7950-fa64-4ee5-a6ea-a4c08f825b68" width="45%" /> </p> </details> </details>
+<details> <summary>Show animations</summary> <p align="center"> <img src="https://github.com/user-attachments/assets/a8f1c2b6-774c-4375-8e21-e383bd32a071" width="45%" /> <img src="https://github.com/user-attachments/assets/069abc72-420b-4d5f-b173-7589146df475" width="45%" />  <img src="https://github.com/user-attachments/assets/c1aa7950-fa64-4ee5-a6ea-a4c08f825b68" width="45%" /> <img src="https://github.com/user-attachments/assets/551b031d-5b57-4d8c-a559-5124ab81a58b" width="45%" /> </p> </details> </details>
 <details> <summary><h2>🌡️ Temperature & State System</h2></summary>
 
 Every voxel tracks its temperature
@@ -222,6 +221,7 @@ UI improvements
 Performance upgrades
 
 </details>
+
 
 
 

@@ -53,7 +53,7 @@ GIFs (click to load)
 
 Water & oil flow
 
-Water floats above oil
+Oil floats above Water
 
 Fire + water → steam
 
@@ -223,6 +223,7 @@ UI improvements
 Performance upgrades
 
 </details>
+
 
 
 
